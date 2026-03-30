@@ -63,6 +63,15 @@ macOS 14+ (Sonoma)
 接入火山引擎（豆包）\OpenAi\Deepgram\AssemblyAI\Soniox\阿里云百炼\百度智能云，边说边出字。性能模式下还支持双通道识别，实时识别结束后用完整录音优化结果。
 欢迎共建接入其他厂商的模型。（豆包现在注册送20-40小时识别，[配置指引](https://my.feishu.cn/wiki/QdEnwBMfUi0mN4k3ucMcNYhUnXr)）
 
+### Apple ASR（免 API Key）
+
+内置 Apple Speech Recognition，可直接作为正式 ASR Provider 选择：
+- 无需 API Key
+- 跟随系统原生语音识别能力工作
+- 可在设置页选择识别语言
+- 支持 Type4Me 现有 direct mode、自定义模式、LLM 后处理、历史记录与文本注入链路
+- 首次使用时会请求麦克风和语音识别权限
+
 ### 自定义处理模式（需配置LLM API Key）
 
 内置 5 种模式，也可以自定义任意多个：
@@ -212,7 +221,7 @@ ASR Provider 架构设计为可插拔：每个云厂商实现 `ASRProviderConfig
 
 **这个项目需要你的帮助。**
 
-目前已经完成了 **火山引擎（Volcengine）** 和 **Deepgram** 的 ASR 适配。项目架构还预留了其他主流云厂商的接口定义（OpenAI Whisper、Google、AWS、Azure、阿里云、腾讯云、讯飞等），欢迎继续补齐客户端实现。
+目前已经完成了 **Apple ASR**、**火山引擎（Volcengine）**、**Deepgram** 等 ASR 适配。项目架构还预留了其他主流云厂商的接口定义（OpenAI Whisper、Google、AWS、Azure、阿里云、腾讯云、讯飞等），欢迎继续补齐客户端实现。
 
 如果你在用其他语音识别服务，欢迎提交 PR 补充实现。添加一个新 Provider 只需要三步：
 
